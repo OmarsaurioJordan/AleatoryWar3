@@ -1,0 +1,150 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/Linea.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/d_monigote_strip13.png" type="Texture" id=2]
+[ext_resource path="res://Sounds/s_nuevozombie.wav" type="AudioStream" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.678431, 0.678431, 0.678431, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.423529, 0.423529, 0.423529, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.87451, 0.87451, 0.87451, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.560784, 0.560784, 0.560784, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.827451, 0.827451, 0.827451, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+
+[node name="Linea" type="Node2D" groups=["lineas"]]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Indice" type="Label" parent="."]
+margin_right = 26.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0.835294, 0.835294, 0.835294, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Kills" type="Label" parent="."]
+margin_left = 183.0
+margin_right = 212.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0.835294, 0.835294, 0.835294, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Grupo" type="Button" parent="."]
+margin_left = 25.0
+margin_right = 60.0
+margin_bottom = 25.0
+focus_mode = 0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Nombre" type="LineEdit" parent="."]
+margin_left = 67.0
+margin_right = 182.0
+margin_bottom = 24.0
+custom_colors/selection_color = Color( 0.352941, 0.352941, 0.352941, 1 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+max_length = 10
+context_menu_enabled = false
+shortcut_keys_enabled = false
+placeholder_text = "name"
+placeholder_alpha = 0.5
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Corona" type="Sprite" parent="."]
+position = Vector2( 223, -22 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 13
+frame = 7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AudNew" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -3.0
+
+[connection signal="pressed" from="Grupo" to="." method="_on_Grupo_pressed"]
+[connection signal="text_changed" from="Nombre" to="." method="_on_Nombre_text_changed"]

@@ -1,0 +1,344 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/Mundo.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/d_hoja.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/d_logo.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/s_iniciawar.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/s_boton.wav" type="AudioStream" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.639216, 0.639216, 0.368627, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.372549, 0.372549, 0.215686, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.176471, 0.176471, 0.176471, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.964706, 0.976471, 0.588235, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.184314, 0.184314, 0.184314, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Mundo" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Titulo" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0.313726 )
+margin_left = 471.0
+margin_top = 5.0
+margin_right = 585.0
+margin_bottom = 26.0
+rect_scale = Vector2( 2.5, 2.5 )
+text = "AleatoryWar 3"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Fondo" type="Sprite" parent="."]
+position = Vector2( 617, 322 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sangres" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sombras" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Arena" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.00392157 )
+margin_right = 1024.0
+margin_bottom = 600.0
+focus_mode = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lista" type="Node2D" parent="."]
+position = Vector2( 25, 67 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Config" type="Label" parent="."]
+margin_left = 23.0
+margin_top = 82.0
+margin_right = 204.0
+margin_bottom = 105.0
+rect_scale = Vector2( 1.2, 1.2 )
+text = "Configuration"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MurosB" type="Button" parent="Config"]
+margin_left = 111.667
+margin_top = 41.6667
+margin_right = 186.667
+margin_bottom = 80.6667
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+shortcut_in_tooltip = false
+text = "Walls"
+icon_align = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MurosV" type="SpinBox" parent="Config"]
+self_modulate = Color( 1, 0.956863, 0.956863, 1 )
+margin_left = -1.0
+margin_top = 46.0
+margin_right = 95.0
+margin_bottom = 78.0
+value = 10.0
+rounded = true
+align = 1
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="Relocate" type="Button" parent="Config"]
+margin_left = 22.5
+margin_top = 109.167
+margin_right = 174.5
+margin_bottom = 137.167
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+shortcut_in_tooltip = false
+text = "Relocate all: Yes"
+icon_align = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Vidamas" type="Button" parent="Config"]
+margin_left = 22.5
+margin_top = 149.167
+margin_right = 174.5
+margin_bottom = 177.167
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+shortcut_in_tooltip = false
+text = "Live at kill: No"
+icon_align = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Fastshots" type="Button" parent="Config"]
+margin_left = 24.1667
+margin_top = 189.167
+margin_right = 176.167
+margin_bottom = 217.167
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+shortcut_in_tooltip = false
+text = "Fast shots: No"
+icon_align = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Lowlives" type="Button" parent="Config"]
+margin_left = 22.5
+margin_top = 230.0
+margin_right = 174.5
+margin_bottom = 258.0
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+shortcut_in_tooltip = false
+text = "Low lives: No"
+icon_align = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Logo" type="Sprite" parent="Config"]
+position = Vector2( 146.667, 359.167 )
+scale = Vector2( 0.833333, 0.833333 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="About" type="Label" parent="Config"]
+margin_left = -10.8333
+margin_top = 301.667
+margin_right = 92.1667
+margin_bottom = 428.667
+rect_scale = Vector2( 0.9, 0.9 )
+text = "AW3 is a shooter fight simulator made in Godot, to make bets or random choices"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Noticias" type="Node2D" parent="."]
+position = Vector2( 1015, 589 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Modo" type="Button" parent="."]
+margin_left = 22.0
+margin_top = 14.0
+margin_right = 129.0
+margin_bottom = 52.0
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+shortcut_in_tooltip = false
+text = "Configuration"
+icon_align = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Play" type="Button" parent="."]
+margin_left = 149.0
+margin_top = 15.0
+margin_right = 243.0
+margin_bottom = 54.0
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+shortcut_in_tooltip = false
+text = "Play"
+icon_align = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Volumen" type="HSlider" parent="."]
+margin_left = 270.0
+margin_top = 28.0
+margin_right = 349.0
+margin_bottom = 44.0
+max_value = 1.0
+step = 0.05
+value = 0.5
+scrollable = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Volutitle" type="Label" parent="Volumen"]
+self_modulate = Color( 1, 1, 1, 0.313726 )
+margin_left = -1.0
+margin_top = -20.0
+margin_right = 76.0
+margin_bottom = 1.0
+text = "Volume"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AudFight" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 6.0
+
+[node name="AudBoton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -6.0
+
+[connection signal="pressed" from="Config/MurosB" to="." method="_on_MurosB_pressed"]
+[connection signal="pressed" from="Config/Relocate" to="." method="_on_Relocate_pressed"]
+[connection signal="pressed" from="Config/Vidamas" to="." method="_on_Vidamas_pressed"]
+[connection signal="pressed" from="Config/Fastshots" to="." method="_on_Fastshots_pressed"]
+[connection signal="pressed" from="Config/Lowlives" to="." method="_on_Lowlives_pressed"]
+[connection signal="pressed" from="Modo" to="." method="_on_Modo_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="value_changed" from="Volumen" to="." method="_on_Volumen_value_changed"]
